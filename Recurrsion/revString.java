@@ -2,7 +2,8 @@ import java.util.Scanner;
 public class revString {
     public static void rev(String s, int idx) {
         if(idx == 0){
-            System.out.println(s.charAt(idx));      
+            System.out.println(s.charAt(idx));  
+            return;    
         }
         System.out.println(s.charAt(idx));
         rev(s,idx-1);
