@@ -1,3 +1,7 @@
+//The code given below is mannual implementaion of LinkedList i.e. withoutusing
+//Collection Framework
+//By using collection Framework we there is no need of creating LL and its functions
+//they are all inbuilt and can be simply called using java.util
 class LL{
     Node head;
     
