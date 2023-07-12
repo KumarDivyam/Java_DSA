@@ -75,22 +75,68 @@ class LL{
         }
         System.out.print("Null");
     }
+
+    public void reversalIterative(){
+        if(head == null || head.next == null)
+        return ;
+
+        Node prevNode = head;
+        Node currNode = head.next;
+
+        while (currNode != null) {
+            Node nextNode = currNode.next;
+            currNode.next = prevNode;
+
+            prevNode = currNode;
+            currNode = nextNode;
+        }
+        head.next = null;
+        head = prevNode;
+    }
+
+    public Node reverseRecursive(Node head)
+    {
+        if (head == null || head.next == null)
+        {
+            return head;
+        }
+
+        Node newHead = reverseRecursive(head.next);
+        head.next.next = head;
+        head.next = null;
+
+        return newHead;
+        
+    }
     public static void main(String[] args) {
         LL list = new LL();
-        list.addFirst("a");
-        list.addFirst("is");       
+        // list.addFirst("a");
+        // list.addFirst("is");       
+        // list.printList();
+        // System.out.println();
+        // list.addLast("List");
+        // list.printList();
+        // list.addFirst("This");
+        // System.out.println();
+        // list.printList();
+        // list.deleteFirst();
+        // System.out.println();
+        // list.printList();
+        // list.deleteLast();
+        // System.out.println();
+        // list.printList(); 
+
+        list.addFirst("1");
+        list.addLast("2");
+        list.addLast("3");
+        list.addLast("4");
+        
         list.printList();
         System.out.println();
-        list.addLast("List");
+        //list.reversalIterative();
+        list.head = list.reverseRecursive(list.head);
         list.printList();
-        list.addFirst("This");
-        System.out.println();
-        list.printList();
-        list.deleteFirst();
-        System.out.println();
-        list.printList();
-        list.deleteLast();
-        System.out.println();
-        list.printList(); 
+
+
     }
 }
