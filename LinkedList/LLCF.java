@@ -20,5 +20,11 @@ public class LLCF {
         list.removeLast();
 
         System.out.println(list);
+        
+        Collections.reverse(list);
+        System.out.println(list);
+    
+    
+    
     }
 }
